@@ -29,14 +29,14 @@
 
                 <ul class="nav pull-right">
 
-                    <li><a href="#">
+                    <li><a href="{{ route('register') }}">
                             Sign Up
                         </a></li>
 
 
 
-                    <li><a href="#">
-                            Forgot your password?
+                    <li><a href="{{ route('password.request') }}">
+                            Forgot your password ?
                         </a></li>
                 </ul>
             </div><!-- /.nav-collapse -->
