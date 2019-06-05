@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Model\Admin\Member;
 
 class RegisterController extends Controller
 {
@@ -49,7 +50,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'key' => ['required', 'string', 'max:255','exists:members'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -63,9 +64,12 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $query = Member::where('key', $data['key'] )->first();
         return User::create([
-            'name' => $data['name'],
+            'name' => $query->name,
             'email' => $data['email'],
+            'type' => $query->type,
+            'lang' => 'en',
             'password' => Hash::make($data['password']),
         ]);
     }

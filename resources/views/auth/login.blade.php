@@ -6,6 +6,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <!-- Styles -->
     <link type="text/css" href="{{ asset('edmin') }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" href="{{ asset('edmin') }}/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link type="text/css" href="{{ asset('edmin') }}/css/theme.css" rel="stylesheet">
