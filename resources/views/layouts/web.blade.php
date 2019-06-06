@@ -9,6 +9,7 @@
         <link type="text/css" href="{{ asset('edmin') }}/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link type="text/css" href="{{ asset('edmin') }}/css/theme.css" rel="stylesheet">
         <link type="text/css" href="{{ asset('edmin') }}/images/icons/css/font-awesome.css" rel="stylesheet">
+        <link href="{{ asset('fontawesome-free') }}/css/all.min.css" rel="stylesheet" type="text/css">
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
               rel='stylesheet'>
     </head>
@@ -51,8 +52,7 @@
                             <img src="{{ asset('edmin') }}/images/user.png" class="nav-avatar" />
                             <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Your Profile</a></li>
-                            <li><a href="#">Edit Profile</a></li>
+                            <li><a href="#">{{ Auth::user()->name }}</a></li>
                             <li><a href="#">Account Settings</a></li>
                             <li class="divider"></li>
                             <li><a href="{{ route('logout') }}">Logout</a></li>
