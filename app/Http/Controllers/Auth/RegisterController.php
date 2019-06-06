@@ -71,6 +71,7 @@ class RegisterController extends Controller
             'type' => $query->type,
             'lang' => 'en',
             'password' => Hash::make($data['password']),
+            'mem_id'    => $query->id,
         ]);
     }
 }

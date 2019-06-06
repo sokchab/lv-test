@@ -1,5 +1,7 @@
 composer require laravel/framework
 
+INSERT INTO `members` (`id`, `name`, `gender`, `dob`, `phone`, `position`, `key`, `type`, `created_at`, `updated_at`) VALUES (NULL, 'LEADER', '1', '1992-06-06', '088 878 0881', 'LEADER', 'ADMIN12345678', '1', '2019-05-07 00:00:00', NULL);
+
 
 <?php
 

@@ -21,8 +21,13 @@ class CreateUsersTable extends Migration
             $table->string('lang',20);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->unsignedBigInteger('mem_id');
             $table->rememberToken();
             $table->timestamps();
+            $table->foreign('mem_id')
+                ->references('id')->on('members')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
